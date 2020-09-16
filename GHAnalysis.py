@@ -62,7 +62,7 @@ if __name__ == '__main__':
 		Begin(sys.argv[sys.argv.index('--init')+1])
 
 	if('-u' in sys.argv):
-		username = sys.argv[sys.argv.index('-u')+1]
+		user_name = sys.argv[sys.argv.index('-u')+1]
 	elif('--user' in sys.argv):
 		user_name = sys.argv[sys.argv.index('--user')+1]
 	else:
