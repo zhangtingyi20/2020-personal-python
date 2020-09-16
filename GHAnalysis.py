@@ -31,7 +31,7 @@ def begin(path):
 	pr.close()
 	
 def findnum(name,repo,event):   
-#根据命令行参数实现查找功能
+#根据命令行参数进行不同的查找
 	num=0
 	if(name==' ' and repo!=' '):#项目名参数为空时
 		with open(event+'.json', 'r', encoding='utf-8') as f:
@@ -58,7 +58,7 @@ def findnum(name,repo,event):
 		
 
 if __name__ == '__main__':
-	if('-i' in sys.argv):
+	if('-i' in sys.argv):#根据命令行信息为参数赋值
 		begin(sys.argv[sys.argv.index('-i')+1])
 	elif('--init' in sys.argv):
 		begin(sys.argv[sys.argv.index('--init')+1])
@@ -81,6 +81,6 @@ if __name__ == '__main__':
 		username=sys.argv[sys.argv.index('--event')+1]
 	else:
 		event=' '
-	findnum(username,userepo,event)
+	findnum(username,userepo,event)#调用函数findunm
 
 	
