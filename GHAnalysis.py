@@ -51,8 +51,8 @@ def findnum(name,repo,event):
 					date = json.loads(jsonstr)
 					if(date['actor']['login']==name and date['repo']['name']==repo):
 						num=num+1
-	elif(repo==' ' and name ==' '):#初始化时直接返回
-		return
+	elif(repo==' ' and name ==' '):#初始化输出0
+		#return
 	print(num)
 
 		
