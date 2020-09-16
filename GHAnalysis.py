@@ -30,7 +30,7 @@ def Begin(path):
 	ie.close()
 	pr.close()
 	
-def Find_Num(name,repo,event):   
+def FindNum(name,repo,event):   
 #根据命令行参数进行不同的查找
 	num=0
 	if(name==' ' and repo!=' '):#项目名参数为空时
@@ -59,9 +59,9 @@ def Find_Num(name,repo,event):
 
 if __name__ == '__main__':
 	if('-i' in sys.argv):#根据命令行信息为参数赋值
-		begin(sys.argv[sys.argv.index('-i')+1])
+		Begin(sys.argv[sys.argv.index('-i')+1])
 	elif('--init' in sys.argv):
-		begin(sys.argv[sys.argv.index('--init')+1])
+		Begin(sys.argv[sys.argv.index('--init')+1])
 
 	if('-u' in sys.argv):
 		username=sys.argv[sys.argv.index('-u')+1]
@@ -81,6 +81,6 @@ if __name__ == '__main__':
 		username=sys.argv[sys.argv.index('--event')+1]
 	else:
 		event=' '
-	findnum(username,userepo,event)#调用函数findunm
+	FindNum(username,userepo,event)#调用函数findunm
 
 	
