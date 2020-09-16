@@ -55,8 +55,6 @@ def FindNum(name,repo,event):
 	
 	print(num)
 
-		
-
 if __name__ == '__main__':
 	if('-i' in sys.argv):#根据命令行信息为参数赋值
 		Begin(sys.argv[sys.argv.index('-i')+1])
@@ -66,21 +64,21 @@ if __name__ == '__main__':
 	if('-u' in sys.argv):
 		username = sys.argv[sys.argv.index('-u')+1]
 	elif('--user' in sys.argv):
-		username = sys.argv[sys.argv.index('--user')+1]
+		user_name = sys.argv[sys.argv.index('--user')+1]
 	else:
-		username = ' '
+		user_name = ' '
 	if('-r' in sys.argv):
-		userepo = sys.argv[sys.argv.index('-r')+1]
+		user_repo = sys.argv[sys.argv.index('-r')+1]
 	elif('--repo' in sys.argv):
-		userepo = sys.argv[sys.argv.index('--repo')+1]
+		user_repo = sys.argv[sys.argv.index('--repo')+1]
 	else:
-		userepo = ' '
+		user_repo = ' '
 	if('-e' in sys.argv):
 		event=sys.argv[sys.argv.index('-e')+1]
 	elif('--event' in sys.argv):
-		username = sys.argv[sys.argv.index('--event')+1]
+		event = sys.argv[sys.argv.index('--event')+1]
 	else:
 		event = ' '
-	FindNum(username,userepo,event)#调用函数findunm
+	FindNum(user_name,user_repo,event)#调用函数findunm
 
 	
