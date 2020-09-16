@@ -2,18 +2,18 @@ import json
 import sys
 import os
 
-def begin(path):
+def Begin(path):
 	pe = open('PushEvent.json','a',encoding='utf-8')
 	ic = open('IssueCommentEven.json','a',encoding='utf-8')
-	ie=open('IssuesEvent.json','a',encoding='utf-8')
-	pr=open('PullRequestEvent.json','a',encoding='utf-8')
+	ie = open('IssuesEvent.json','a',encoding='utf-8')
+	pr = open('PullRequestEvent.json','a',encoding='utf-8')
 	file = os.listdir(path)#得到文件列表
 	for i in file:
 		if (os.path.splitext(i)[1] == '.json'):#os.path.splitext(i)返回一个列表，首个元素为文件名。第二个元素为文件类型
 			with open(path+"//"+i, 'r', encoding='utf-8') as f:
 					for jsonstr in f.readlines(): #根据读到数据的不通将数据写入不同文件
 						date = json.loads(jsonstr)
-						if(date['type']=='PushEvent'):
+						if(date['type'] == 'PushEvent'):
 							pe.write(json.dumps(date))
 							pe.write('\n')
 						elif(date['type']=='IssueCommentEvent'):
@@ -30,7 +30,7 @@ def begin(path):
 	ie.close()
 	pr.close()
 	
-def findnum(name,repo,event):   
+def Find_Num(name,repo,event):   
 #根据命令行参数进行不同的查找
 	num=0
 	if(name==' ' and repo!=' '):#项目名参数为空时
