@@ -3,10 +3,10 @@ import sys
 import os
 
 def Begin(path):
-	pe = open('PushEvent.json','a',encoding='utf-8')
-	ic = open('IssueCommentEven.json','a',encoding='utf-8')
-	ie = open('IssuesEvent.json','a',encoding='utf-8')
-	pr = open('PullRequestEvent.json','a',encoding='utf-8')
+	pe = open('PushEvent.json','w',encoding='utf-8')
+	ic = open('IssueCommentEven.json','w',encoding='utf-8')
+	ie = open('IssuesEvent.json','w',encoding='utf-8')
+	pr = open('PullRequestEvent.json','w',encoding='utf-8')
 	file = os.listdir(path)#得到文件列表
 	for i in file:
 		if (os.path.splitext(i)[1] == '.json'):#os.path.splitext(i)返回一个列表，首个元素为文件名。第二个元素为文件类型
@@ -64,23 +64,23 @@ if __name__ == '__main__':
 		Begin(sys.argv[sys.argv.index('--init')+1])
 
 	if('-u' in sys.argv):
-		username=sys.argv[sys.argv.index('-u')+1]
+		username = sys.argv[sys.argv.index('-u')+1]
 	elif('--user' in sys.argv):
-		username=sys.argv[sys.argv.index('--user')+1]
+		username = sys.argv[sys.argv.index('--user')+1]
 	else:
-		username=' '
+		username = ' '
 	if('-r' in sys.argv):
-		userepo=sys.argv[sys.argv.index('-r')+1]
+		userepo = sys.argv[sys.argv.index('-r')+1]
 	elif('--repo' in sys.argv):
-		userepo=sys.argv[sys.argv.index('--repo')+1]
+		userepo = sys.argv[sys.argv.index('--repo')+1]
 	else:
-		userepo=' '
+		userepo = ' '
 	if('-e' in sys.argv):
 		event=sys.argv[sys.argv.index('-e')+1]
 	elif('--event' in sys.argv):
-		username=sys.argv[sys.argv.index('--event')+1]
+		username = sys.argv[sys.argv.index('--event')+1]
 	else:
-		event=' '
+		event = ' '
 	FindNum(username,userepo,event)#调用函数findunm
 
 	
